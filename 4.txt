@@ -1,0 +1,47 @@
+\documentclass{article}[a4paper]
+\usepackage{xcolor}
+\usepackage[paperheight=20cm,paperwidth=14cm]{geometry}
+\usepackage{fancyhdr}
+\usepackage{graphicx} %LaTeX package to import graphics
+%\graphicspath{{Pictures/}} %configuring the graphicx package
+
+
+\begin{document}
+	\pagestyle{fancy}
+	\fancyfoot{}
+	\renewcommand{\headrulewidth}{0pt}% To remove the header line
+	\begin{center}
+		\textcolor{red}{S.J.P.N Trust's}\\
+		\textcolor{blue}{Hirasugar Institute of Technolofgy, Nidasoshi}\break
+		\textit{\textcolor{red}{Inculcating Values, Promoting Prosperity}}\break
+		\textcolor{brown}{Accredited at "A" Grade by NAAC}\break
+		\textcolor{red}{Programmes Accredited by NBA : CSE and ECE}\\
+		
+		\hfill\break
+	%\includegraphics[width=0.3\textwidth]{logo.JPEG}\par\vspace{0.5cm}	
+	\includegraphics[scale=0.1]{logo.JPEG}
+	\end{center}
+	
+	\begin{center}
+		%\hfill\break
+		\textbf{\textit{Department of Computer Science and Engineering}}
+		
+		\Huge{\bfseries{\textit{\textsl{\textcolor{red}{CERTIFICATE }}}}}
+	\end{center}
+	
+	\vspace{10mm}
+	\hfill \break
+	\underline {\hspace{10.7cm}}
+	\vspace{1mm}
+	\hfill \break
+	has successfully completed 16 Weeks of internship program from February 2023 to June 2023 at Cybersena
+	India Private Limited, Belagavi. He has trained on ‘Cyber Security.
+	\vspace{16mm}
+	\hfill \break
+	
+	\bfseries{\hspace{0.2cm}$\overline{\mbox{Course Coordinator}}$ \hspace{3cm}$\overline{\mbox{HOD}}$}
+	\hfill \break
+	
+	
+\end{document}
+

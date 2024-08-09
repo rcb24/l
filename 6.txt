@@ -1,0 +1,22 @@
+\documentclass{article}
+\usepackage{graphicx}
+\usepackage{subcaption}
+\usepackage[left=2cm,right=2cm,top=2cm,bottom=2cm]{geometry}
+\begin{document}
+	\begin{figure}[h]
+		\centering
+		\begin{subfigure}{0.45\textwidth}
+			\includegraphics[width=\textwidth]{logo.JPEG}
+			\caption{Caption for Image 1}
+			\label{fig:Logo}
+		\end{subfigure}
+		\hfill
+		\begin{subfigure}{0.45\textwidth}
+			\includegraphics[width=\textwidth]{logo.JPEG}
+			\caption{Caption for Image 2}
+			%\label{fig:Logo}
+		\end{subfigure}
+		\caption{Main Caption for Both Images}
+		%\label{fig:main}
+	\end{figure}
+\end{document}

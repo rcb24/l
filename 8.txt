@@ -1,5 +1,5 @@
 \documentclass{article}
-\usepackage[english]{babel}
+%\usepackage[english]{babel}
 \usepackage{amsthm}
 \newtheorem{theorem}{Theorem}[section]
 \newtheorem{corollary}{Corollary}[theorem]

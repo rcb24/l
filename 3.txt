@@ -1,0 +1,28 @@
+
+\documentclass{article}
+\usepackage[a4paper, total={6in, 8in}]{geometry}
+\usepackage{graphicx}
+\usepackage{xcolor}
+
+\begin{document}
+	
+	\begin{titlepage}
+		\centering
+		{\large\bfseries VISVESVARAYA TECCHNOLOGICAL UNIVERSITY \par}
+		{\large\bfseries Jnana sangama, Belagavi -- 590018 \par\vspace{0.5cm}}
+		\includegraphics[width=0.3\textwidth]{logo.JPEG}\par\vspace{0.5cm}
+		{\Large A Project Report \vspace{0.5cm}\par}
+		{\Large On \par\vspace{0.5cm}}
+		{\huge\bfseries\ "Title of Your Project" \par\vspace{0.5cm}}
+		{\normalsize Submitted in partial fulfillment of the requirements for the award of degree\par\vspace{0.5cm}}
+		{\Large\bfseries  BACHELOR OF ENGINEERING \par\vspace{0.5cm}}
+		{\Large\bfseries  IN \par\vspace{0.5cm}}
+		{\Large\bfseries  COMPUTER SCIENCE AND ENGINEERING \par\vspace{0.5cm}}
+		{\Large  Submitted By \par\vspace{0.5cm}}
+		{\Large\itshape\bfseries Name:                             USN:                 \par\vspace{0.5cm}}
+		{\bfseries\normalsize\textit{ DEPARTMENT OF COMPUTER SCIENCE  AND ENGINEERING} \par\vspace{0.5cm}}
+		{\normalsize HIRASUGAR INSTITUTE OF TECHNOLOGY \par\vspace{0.5cm}}
+		{\normalsize NIDASOSHI -- 591236 \par\vspace{0.5cm}}
+		{\normalsize 2023-24  }
+	\end{titlepage}
+\end{document}

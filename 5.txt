@@ -1,0 +1,26 @@
+\documentclass{article}
+\usepackage[a4paper,total={8in,8in}]{geometry}
+\setlength{\tabcolsep}{15pt}
+\renewcommand{\arraystretch}{1.5}
+\begin{document}
+\title{Student Marks List}
+\date{}
+\begin{table}[h!]
+\centering
+\large\textbf\maketitle
+\begin{tabular}{|c|c|c|c|c|c|}
+\hline
+\large\textbf{S.NO}&\large\textbf{USN}&\large\textbf{Student Name}&\multicolumn{3}{|c|}{\large\textbf{marks}}\\
+
+\cline{4-6}
+&	&	&\large\textbf{subject1}&\large\textbf{subject2}&\large\textbf{subject3}\\
+\hline
+1&4XX22XX001 &name 1&89&60&90\\
+\hline
+2&4XX22XX002 &name 2&78&45&98\\
+\hline
+3&4XX22XX003 &name 3&67&55&59\\
+\hline
+\end{tabular}
+\end{table}
+\end{document}
