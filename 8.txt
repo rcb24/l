@@ -1,0 +1,48 @@
+\documentclass{article}
+\usepackage[english]{babel}
+\usepackage{amsthm}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{corollary}{Corollary}[theorem]
+\newtheorem{lemma}[theorem]{Lemma}
+\theoremstyle{definition}
+\newtheorem{definition}{Definition}[section]
+
+\begin{document}
+\section{Numbered theorems,definitions,corollaries and lemmas}
+Theorems can easily be defined:
+
+\begin{theorem}
+let \(f\) be a function whose derivative exits in every point, then \(f\) is a continuous function.
+\end{theorem}
+
+\begin{theorem}[pythagorean theorem]
+\label{pythagorean}
+This is a theorem about right triangles and can be summarised in the next equation.
+\[x^2+y^2=z^2\]
+\end{theorem}
+
+and a consequence of theorem \ref{pythagorean} is the statement in the corollary.
+
+\begin{corollary}
+there's  no right rectangle whose sides measure 3cm,4cm and 6cm.
+\end{corollary}
+
+you can reference theorem such as \ref{pythagorean}when a label is assigned.
+
+\begin{lemma}
+Given two line segments whose lengths are \(a\) and \(b\) respectively there is a real numbers \(r\) such that \(b=ra\).
+\end{lemma}
+
+\begin{definition}[absolute value function]
+The absolute value function can be specified as a two part definition as follows:\\
+$
+|x|=
+\left\{
+\begin{array}{ll}
+x & \mbox{if} x >= 0\\
+-x & \mbox{if} x < 0
+\end{array}
+\right.
+$
+\end{definition}
+\end{document}
