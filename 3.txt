@@ -1,0 +1,173 @@
+Expt3.html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Tags Example</title>
+    <!-- Link to the external stylesheet -->
+    <link rel="stylesheet" href="Style1.css">
+</head>
+
+<body>
+    <!-- h2 tag example -->
+    <h2>Welcome to My Web Page</h2>
+
+    <!-- p tag immediately following h2 -->
+    <p>This is a paragraph that follows the h2 tag, styled using the adjacent sibling selector.</p>
+
+    <!-- hr tag example -->
+    <hr>
+
+    <!-- h3 tag example -->
+    <h3>Section Title</h3>
+
+    <!-- p tag following h3 -->
+    <p>This paragraph comes after an h3 tag and is styled using the general sibling selector.</p>
+
+    <!-- div tag with a child p and a nested span -->
+    <div id="special-div">
+        <p>This paragraph is a direct child of a div and is styled using the child selector.</p>
+        <p>This is another paragraph inside a div.</p>
+        <span>This is a span inside a div, demonstrating inline styling.</span>
+    </div>
+
+    <!-- hr tag example -->
+    <hr>
+
+    <!-- Time tag example -->
+    <p>This event happened on <time datetime="2024-08-23">August 23, 2024</time>.</p>
+
+    <!-- Image tag with alt attribute -->
+    <p>Here is an image with a border styled using an attribute selector:</p>
+    <img src="smile.jpg" alt="Example Image">
+
+    <!-- Anchor tag example -->
+    <div>
+        <p>Visit the following link for more information:</p>
+        <a href="https://www.example.com" target="_blank">Click here to visit Example.com</a>
+    </div>
+</body>
+</html>
+
+
+Style.css
+/* Universal selector: applies to all elements */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Element selectors: styles all <h2> and <h3> elements */
+h2 {
+    color: darkblue;
+    font-size: 2.5em;
+    font-family: Arial, sans-serif;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+h3 {
+    color: darkgreen;
+    font-size: 2em;
+    font-family: 'Times New Roman', Times, serif;
+    margin-top: 20px;
+}
+
+/* Styling horizontal rule */
+hr {
+    border: 0;
+    height: 1px;
+    background: #333;
+    background-image: linear-gradient(to right, #ccc, #333, #ccc);
+    margin: 30px 0;
+}
+
+/* Paragraph style */
+p {
+    color: #333;
+    font-size: 1.1em;
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+/* Class selector: applies to elements with class "highlight" */
+.highlight {
+    background-color: yellow;
+    font-weight: bold;
+}
+
+/* ID selector: applies to the element with id "special-div" */
+#special-div {
+    padding: 20px;
+    background-color: #f0f0f0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin: 20px 0;
+}
+
+/* Styling <div> elements */
+div {
+    margin: 10px 0;
+    padding: 15px;
+    background-color: #e6f7ff;
+    border: 1px solid #b3e0ff;
+}
+
+/* Styling <span> elements */
+span {
+    color: #ff5733;
+    font-style: italic;
+    text-decoration: underline;
+}
+
+/* Pseudo-class selector for links */
+a {
+    text-decoration: none;
+    color: #007bff;
+}
+
+a:hover {
+    text-decoration: underline;
+    color: #0056b3;
+}
+
+/* Attribute selector: applies styles to elements with an 'alt' attribute */
+img[alt] {
+    border: 2px solid #ddd;
+    padding: 5px;
+    border-radius: 8px;
+    max-width: 100%;
+}
+
+/* Styling <time> elements */
+time {
+    font-size: 0.9em;
+    color: #555;
+    font-weight: bold;
+}
+
+/* Descendant selector: applies styles to <a> elements within <div> elements */
+div a {
+    color: #dc3545;
+    font-weight: bold;
+}
+
+/* Child selector: applies styles to direct <p> children of <div> elements */
+div > p {
+    color: #28a745;
+    font-size: 1em;
+}
+
+/* Adjacent sibling selector: applies styles to <p> elements immediately following an <h2> */
+h2 + p {
+    color: #6c757d;
+    font-style: italic;
+}
+
+/* General sibling selector: applies styles to <p> elements following an <h3> */
+h3 ~ p {
+    color: #ffc107;
+}
+

@@ -1,0 +1,129 @@
+Expt6.html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Simple Calculator</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <div class="calculator">
+    <h2>Simple Calculator</h2>
+    <input type="text" id="input1" placeholder="Enter first number">
+    <input type="text" id="input2" placeholder="Enter second number">
+
+    <div class="buttons">
+      <button onclick="calculate('sum')">Sum</button>
+      <button onclick="calculate('difference')">Difference</button>
+      <button onclick="calculate('product')">Product</button>
+      <button onclick="calculate('quotient')">Quotient</button>
+      <button onclick="calculate('remainder')">Remainder</button>
+      <button onclick="calculate('power')">Power</button>
+      <button onclick="calculate('square')">Square</button>
+      <button onclick="calculate('sqrt')">Square Root</button>
+     </div>
+
+    <h3 id="result">Result: </h3>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
+styles.css
+body {
+  font-family: Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #f7f7f7;
+}
+
+.calculator {
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+h2 {
+  margin-bottom: 20px;
+}
+
+input {
+  width: 80%;
+  padding: 10px;
+  margin-bottom: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.buttons {
+  margin-bottom: 20px;
+}
+
+button {
+  padding: 10px 15px;
+  margin: 5px;
+  border: none;
+  background-color: #007BFF;
+  color: white;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+#result {
+  font-size: 20px;
+  font-weight: bold;
+  color: #333;
+}
+
+script.js
+function calculate(operation) {
+  const input1 = parseFloat(document.getElementById("input1").value);
+  const input2 = parseFloat(document.getElementById("input2").value);
+  let result;
+
+  switch (operation) {
+    case 'sum':
+      result = input1 + input2;
+      break;
+    case 'difference':
+      result = input1 - input2;
+      break;
+    case 'product':
+      result = input1 * input2;
+      break;
+    case 'quotient':
+      result = input1 / input2;
+      break;
+    case 'remainder':
+      result = input1 % input2;
+      break;
+    case 'power':
+      result = Math.pow(input1, input2);
+      break;
+    case 'square':
+      result = input1 ** 2;
+      break;
+    case 'sqrt':
+      result = Math.sqrt(input1);
+      break;
+	case 'clear': cls();
+	break;
+    default:
+      result = "Invalid Operation";
+  }
+
+  document.getElementById("result").innerText = "Result: " + result;
+}
+
