@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AJAX Example</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+
+        button {
+            padding: 10px 15px;
+            font-size: 16px;
+            margin-right: 10px;
+        }
+
+        #content {
+            margin-top: 20px;
+            border: 1px solid #ccc;
+            padding: 10px;
+            background-color: #f9f9f9;
+        }
+    </style>
+</head>
+<body>
+    <h1>AJAX Example: Load Text Content</h1>
+        <h2>a. AJAX without jQuery</h2>
+    <button id="loadTextBtn">Load Text Content (Vanilla JS)</button>
+    <div id="content-vanilla"></div>
+
+    <h2>b. AJAX with jQuery</h2>
+    <button id="loadTextBtnJQuery">Load Text Content (jQuery)</button>
+    <div id="content-jquery"></div>
+
+<h1>jQuery JSON Example</h1>
+
+    <h2>c. Using getJSON()</h2>
+    <button id="loadJsonBtn">Load JSON Data</button>
+    <div id="content-json"></div>
+
+    <h2>d. Using parseJSON()</h2>
+    <button id="parseJsonBtn">Parse JSON Data</button>
+    <div id="content-parsed"></div>
+    <script>
+        // AJAX without jQuery
+        document.getElementById("loadTextBtn").addEventListener("click", function() {
+            var xhr = new XMLHttpRequest();
+            xhr.open("GET", "content.txt", true);
+            xhr.onreadystatechange = function() {
+                if (xhr.readyState === 4 && xhr.status === 200) {
+                    document.getElementById("content-vanilla").innerText = xhr.responseText;
+                }
+            };
+            xhr.send();
+        });
+
+        // AJAX with jQuery
+        $(document).ready(function() {
+            $("#loadTextBtnJQuery").click(function() {
+                $.ajax({
+                    url: "content.txt",
+                    method: "GET",
+                    success: function(data) {
+                        $("#content-jquery").text(data);
+                    },
+                    error: function(jqXHR, textStatus, errorThrown) {
+                        console.error("Error loading content: ", textStatus, errorThrown);
+                    }
+                });
+            });
+        });
+// Using getJSON() to fetch JSON data
+        $("#loadJsonBtn").click(function() {
+            $.getJSON("data.json", function(data) {
+                let output = "<h3>Fetched JSON Data:</h3><pre>" + JSON.stringify(data, null, 2) + "</pre>";
+                $("#content-json").html(output);
+            }).fail(function() {
+                $("#content-json").html("<p>Error loading JSON data.</p>");
+            });
+        });
+
+        // Using parseJSON() to parse JSON string and display values
+        $("#parseJsonBtn").click(function() {
+            const jsonString = '{"name": "John", "age": 30, "city": "New York"}';
+            const parsedData = $.parseJSON(jsonString);
+            let output = `<h3>Parsed JSON Data:</h3>
+                          <p>Name: ${parsedData.name}</p>
+                          <p>Age: ${parsedData.age}</p>
+                          <p>City: ${parsedData.city}</p>`;
+            $("#content-parsed").html(output);
+        });
+
+    </script>
+</body>
+</html>
+
+content.txt
+This is a sample text file content loaded via AJAX.
+
+data.json
+{
+    "employees": [
+        { "name": "Alice", "age": 28, "city": "Los Angeles" },
+        { "name": "Bob", "age": 34, "city": "Chicago" },
+        { "name": "Charlie", "age": 25, "city": "New York" }
+    ]
+}

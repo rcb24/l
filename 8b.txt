@@ -1,0 +1,144 @@
+Expt8b.php
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Records - Selection Sort</title>
+    <link rel="stylesheet" href="style8b.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Sorted Student Records</h1>
+        <?php
+        // Database connection
+        $servername = "localhost";
+        $username = "root";
+        $password = "";
+        $dbname = "college";
+
+        // Create connection
+        $conn = new mysqli($servername, $username, $password, $dbname);
+
+        // Check connection
+        if ($conn->connect_error) {
+            die("Connection failed: " . $conn->connect_error);
+        }
+
+        // Fetch student records
+        $sql = "SELECT * FROM students";
+        $result = $conn->query($sql);
+
+        $students = array(); // Initialize the array
+
+        if ($result->num_rows > 0) {
+            // Store data into an array
+            while ($row = $result->fetch_assoc()) {
+                $students[] = $row;
+            }
+
+            // Selection Sort algorithm to sort students by grade
+            $n = count($students);
+            for ($i = 0; $i < $n - 1; $i++) {
+                $min_idx = $i;
+                for ($j = $i + 1; $j < $n; $j++) {
+                  if ($students[$j]['id'] < $students[$min_idx]['id']) {
+                        $min_idx = $j;
+                    }
+                }
+                // Swap the found minimum element with the first element
+                $temp = $students[$min_idx];
+                $students[$min_idx] = $students[$i];
+                $students[$i] = $temp;
+            }
+        } else {
+            echo "<p>No student records found.</p>";
+        }
+
+        // Display the sorted students
+        if (!empty($students)) {
+            echo "<table>";
+            echo "<tr><th>ID</th><th>Name</th><th>Grade</th></tr>";
+            foreach ($students as $student) {
+                echo "<tr><td>{$student['id']}</td><td>{$student['Name']}</td><td>{$student['Grade']}</td></tr>";
+            }
+            echo "</table>";
+        }
+
+        // Close connection
+        $conn->close();
+        ?>
+    </div>
+</body>
+</html>
+
+
+
+
+
+style8b.css
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    width: 600px;
+    text-align: center;
+}
+
+h1 {
+    margin-bottom: 20px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 10px;
+    border: 1px solid #ddd;
+    text-align: center;
+}
+
+th {
+    background-color: #f2f2f2;
+}
+
+tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+
+students.sql
+Database: `college`
+
+CREATE TABLE `students` (
+  `id` int(11) NOT NULL,
+  `Name` varchar(100) NOT NULL,
+  `Grade` int(10) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- Dumping data for table `students`
+INSERT INTO `students` (`id`, `Name`, `Grade`) VALUES
+(1, 'Alice', 85),
+(2, 'Bob', 82),
+(3, 'Jhon', 92),
+(4, 'Mary', 55),
+(5, 'Sita', 98);
+
