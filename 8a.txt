@@ -1,20 +1,20 @@
 Expt8a.php
 <?php
-// File to store the visitor count
+
 $counterFile = "count.txt";
 
-// Check if the file exists, if not, create it and initialize the count to 0
+
 if (!file_exists($counterFile)) {
     file_put_contents($counterFile, 0);
 }
 
-// Read the current count from the file
+
 $visitorCount = (int)file_get_contents($counterFile);
 
-// Increment the count for each page visit
+
 $visitorCount++;
 
-// Write the updated count back to the file
+
 file_put_contents($counterFile, $visitorCount);
 ?>
 
